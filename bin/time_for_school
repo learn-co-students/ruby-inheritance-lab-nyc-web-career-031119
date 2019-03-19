@@ -13,8 +13,24 @@ avi.first_name = "Avi"
 avi.last_name = "Flombaum"
 
 
-some_knowledge = avi.teach 
+some_knowledge = avi.teach
 
 steve.learn(some_knowledge)
 
 puts "Steve just learned this important knowledge: '#{steve.knowledge.first}' from Avi"
+
+### Bonus Additions
+
+jim = User.new
+jim.first_name = "Jim"
+jim.last_name = "Attendance"
+
+nancy = Student.new
+nancy.first_name = "Nancy"
+nancy.last_name = "Drew"
+
+## jim.learn // => Jim has undefined method called learn. Out of scope.
+steve.learn(avi.teach)
+nancy.learn(avi.teach)
+
+[steve, nancy].each {|student| puts student.knowledge}
